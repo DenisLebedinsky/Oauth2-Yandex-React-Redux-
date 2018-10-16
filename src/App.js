@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {browserHistory} from "react-router";
 import {Link} from 'react-router'
 import {getToken} from "./selectors";
+import {appID} from "./config";
 
 class App extends Component {
     componentDidMount() {
@@ -18,7 +19,7 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <Link className='btn'
-                          to='https://oauth.yandex.ru/authorize?response_type=token&client_id='
+                          to={`https://oauth.yandex.ru/authorize?response_type=token&client_id=${appID}`}
                           target='_self'>Войти</Link>
                     <p>token: {this.props.token}</p>
                 </header>
